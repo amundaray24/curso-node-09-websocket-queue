@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  node-websocket-queue:
+    image: node-websocket-queue:1.0.0
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: node-websocket-queue
+    environment:
+      - PORT=${PORT}
+    env_file: .env
+    ports:
+      - "${PORT}:${PORT}"
